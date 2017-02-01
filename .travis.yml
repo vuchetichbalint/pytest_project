@@ -2,8 +2,13 @@ language: python
 python:
   - "3.5"
 # command to install dependencies
-install: "pip install -r config/requirements.txt"
+install:
+  - pip install -r config/requirements.txt
+  - pip install coveralls
 # command to run tests
-script: pytest
+script:
+  - pytest
+  - coverage run test_string_manipulator.py
+  - coverage run test_wallet.py
 after_success:
   - coveralls
