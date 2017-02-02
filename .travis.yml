@@ -10,5 +10,6 @@ script:
   - pytest
   - coverage run test_string_manipulator.py
   - coverage run test_wallet.py
+  - coverage run test_datascience_sum.py
 after_success:
   - coveralls
